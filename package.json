@@ -1,0 +1,25 @@
+{
+  "name": "nightwatch-saucelabs",
+  "version": "1.0.0",
+  "description": "How to run Nightwatch.js tests against SauceLabs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nightwatch.js",
+    "nightwatch",
+    "saucelabs",
+    "selenium",
+    "grid",
+    "automated",
+    "testing"
+],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nightwatch": "^2.0.10",
+    "saucelabs": "^7.1.3",
+    "nightwatch-saucelabs-endsauce": "^1.0.6"
+  }
+}
