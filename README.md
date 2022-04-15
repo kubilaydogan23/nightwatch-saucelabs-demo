@@ -10,61 +10,56 @@
 
     > npm install nightwatch-saucelabs-endsauce
 
-2) **Add or append this entries in nightwatch.conf.js file**
+2) **Add this entry in the nightwatch.conf.js file**
 
     > "custom_commands_path": ["./node_modules/nightwatch-saucelabs-endsauce/commands"]
 
-    and
+3) **Add this basic values under test setting in nightwatch.conf.js file**
+
     ```json
     test_settings: {
-      default: {
-        launch_url: "https://www.davidmello.com",
-        skip_testcases_on_fail: false,
-        use_ssl: true,
-        silent: true,
-        username: "${SAUCE_USERNAME}",
-        access_key: "${SAUCE_ACCESS_KEY}",
-        sauce_region: "us-west-1",
-        selenium: {
-          port: 443,
-          host: "ondemand.saucelabs.com",
-          start_process: false
-        },
-        desiredCapabilities: {
-          browserName: "chrome",
-          screenResolution: "1280x1024",
-          browserVersion: "latest",
-          javascriptEnabled: true,
-          acceptSslCerts: true,
-          timeZone: "New York"
-        }
+    default: {
+      selenium_host: "ondemand.saucelabs.com",
+      selenium_port: 443,
+      selenium_start_process: false,
+      use_ssl: true,
+      silent: true,
+      username: "${SAUCE_USERNAME}",
+      access_key: "${SAUCE_ACCESS_KEY}",
+      sauce_region: "us-west-1",      // optional
+      desiredCapabilities: {
+        browserName: "chrome",
+        screenResolution: "1280x1024",
+        browserVersion: "latest",
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        timeZone: "New York"
       }
     }
     ```
-
     To enable parallel test execution in Nightwatch set the enabled flag equal to true under test_workers and configure the workers to auto or a set number of your choosing
 
     ```json
     test_workers: {
-      enabled: true,
-      workers: "auto"
-    },
+        enabled: true,
+        workers: "auto"
+    }
     ```
 
-3. **Sending Nightwatch test result to SauceLabs**
+4. **Sending Nightwatch test result to SauceLabs**
 
     ```js
     module.exports = {
         ...
-        afterEach: function (browser, done) {
+        afterEach: function (browser) {
+            browser.endSauce();
             browser.end();
-            browser.endSauce(done);
         }
         ...
     }
     ```
 
-4. **Envirnment Variables**
+5. **Envirnment Variables**
 
 * `{SAUCE_USERNAME}` and `{SAUCE_ACCESS_KEY}` can be found in the Account > User Settings section of SauceLabs. 
 
