@@ -1,6 +1,6 @@
 # Running Nightwatch.js tests against SauceLabs
 
-- Article - [How to use SauceLabs with Nightwatch](https://www.davidmello.com/how-to-use-nightwatch-with-saucelabs/)
+- Article - [How to use SauceLabs with Nightwatch](https://www.davidmello.com/how-to-use-nightwatch-with-saucelabs/) by David Mello.
 
 ## Steps
 
