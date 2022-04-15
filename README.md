@@ -18,23 +18,23 @@
 
     ```js
     test_settings: {
-    default: {
-      selenium_host: "ondemand.saucelabs.com",
-      selenium_port: 443,
-      selenium_start_process: false,
-      use_ssl: true,
-      silent: true,
-      username: "${SAUCE_USERNAME}",
-      access_key: "${SAUCE_ACCESS_KEY}",
-      sauce_region: "us-west-1",      // optional
-      desiredCapabilities: {
-        browserName: "chrome",
-        screenResolution: "1280x1024",
-        browserVersion: "latest",
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        timeZone: "New York"
-      }
+        default: {
+          selenium_host: "ondemand.saucelabs.com",
+          selenium_port: 443,
+          selenium_start_process: false,
+          use_ssl: true,
+          silent: true,
+          username: "${SAUCE_USERNAME}",
+          access_key: "${SAUCE_ACCESS_KEY}",
+          sauce_region: "us-west-1",      // optional
+          desiredCapabilities: {
+              browserName: "chrome",
+              screenResolution: "1280x1024",
+              browserVersion: "latest",
+              javascriptEnabled: true,
+              acceptSslCerts: true,
+              timeZone: "New York"
+          }
     }
     ```
     To enable parallel test execution in Nightwatch set the enabled flag equal to true under test_workers and configure the workers to auto or a set number of your choosing
