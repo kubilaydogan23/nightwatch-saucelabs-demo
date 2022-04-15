@@ -14,6 +14,8 @@
 
     > "custom_commands_path": ["./node_modules/nightwatch-saucelabs-endsauce/commands"]
 
+    The custom_commands_path listed above will allow Nightwatch to find the nightwatch-saucelabs-endsauce package that will be called to send the test result information to SauceLabs on test end. This comes in as a dependency in package.json.
+
 3) **Add this basic values under test setting in nightwatch.conf.js file**
 
     ```js
@@ -37,6 +39,9 @@
           }
     }
     ```
+    
+    Also ensure the sauce_region value matches for your account (this example uses us-west-1).
+    
     To enable parallel test execution in Nightwatch set the enabled flag equal to true under test_workers and configure the workers to auto or a set number of your choosing
 
     ```js
@@ -72,14 +77,3 @@
   Quit and save (Control + x)
 
 *  If you prefer to hardcode them, you can replace the placeholder names (username and access key) in quotes in your nightwatch conf file.
-
-* Also ensure the sauce_region value matches for your account (this example uses us-west-1).
-Execute the test by running nightwatch in the root folder.
-
-
-
-## Notes
-
-* The custom_commands_path listed above will allow Nightwatch to find the nightwatch-saucelabs-endsauce package that will be called to send the test result information to SauceLabs on test end. This comes in as a dependency in package.json.
-
-* Once the test completes you should be able to see the video of the result when you login to the Automated test results section of the SauceLabs website for your account along with the passing status of the test.
