@@ -16,7 +16,7 @@
 
 3) **Add this basic values under test setting in nightwatch.conf.js file**
 
-    ```json
+    ```js
     test_settings: {
     default: {
       selenium_host: "ondemand.saucelabs.com",
@@ -39,7 +39,7 @@
     ```
     To enable parallel test execution in Nightwatch set the enabled flag equal to true under test_workers and configure the workers to auto or a set number of your choosing
 
-    ```json
+    ```js
     test_workers: {
         enabled: true,
         workers: "auto"
