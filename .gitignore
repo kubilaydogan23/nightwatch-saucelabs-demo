@@ -1,4 +1,12 @@
+# Dependency directories
 node_modules/
+
+# idea
+.idea/
+
+# Test Output
 tests_output/
-log/
+reports/
+screenshots/
+logs/
 chromedriver.log
